@@ -1,0 +1,149 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="/css/site.css" />
+
+    var title = Model.Value<string>("heroTitle");
+    var text = Model.Value<string>("heroText");
+    var link = Model.Value<Link>("heroLink");
+    var image = Model.Value<IPublishedContent>("heroBgImage");
+    var bgUrl = image?.Url() ?? "";
+}
+
+@* Hero Sektion med Bakrund *@
+<section class="hero" style="background-image: url('/media/zgfjqijr/heropicture.png');">
+    <div class="container">
+        <div class="hero-text">
+            <h1>We bring<br />success to you</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur. adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+@* We have 40 years experience sektionen *@
+<section class="experience-section">
+    <div class="container">
+        <div class="experience-content">
+            <p style="color: #D9C3A9; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 10px;">ABOUT US</p>
+            <h2>We have 40 years experience</h2>
+            <p style="font-style: italic; font-size: 18px;">"We have over 25 years of experience providing expert financial advice to both businesses and individuals."</p>
+            <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+            <img src="/media/l4dlb4l5/signature.png" alt="Signature" style="margin: 20px 0;" />
+            <p><strong>Tina Fox - CEO & Founder</strong></p>
+        </div>
+
+        <div class="callback-form">
+            <h3>Request a call back</h3>
+            <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+            <form>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email address" />
+                <input type="tel" placeholder="Phone" />
+                <select>
+                    <option>Financial consulting</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+@* service delen *@
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>We Provide The Solutions</h2>
+            <p>To Grow Your Business Faster</p>
+        </div>
+
+        <div class="services-grid">
+            @* Service kort 1 *@
+            <div class="service-card">
+                <img src="/media/hq1pu4zc/riskmanagement.png" alt="Risk Management" />
+                <h3>Risk Management</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+
+            @* Service kort 2 *@
+            <div class="service-card">
+                <img src="/media/hi0n5vbv/bonds.png" alt="Bonds & Commodities" />
+                <h3>Bonds & Commodities</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+
+            @* Service kort 3 *@
+            <div class="service-card">
+                <img src="/media/wgup4yic/assurance.png" alt="Assurance & Audits" />
+                <h3>Assurance & Audits</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+
+            @* Service kort 4 *@
+            <div class="service-card">
+                <img src="/media/5jyck5dg/tax.png" alt="Tax and Trusts" />
+                <h3>Tax and Trusts</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+
+            @* Service kort 5 *@
+            <div class="service-card">
+                <img src="/media/d5yf500n/fininacial.png" alt="Financial Advisor" />
+                <h3>Financial Advisor</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+
+            @* Service kort 6 *@
+            <div class="service-card">
+                <img src="/media/4isbwdx3/static.png" alt="Statistic Advisors" />
+                <h3>Statistic Advisors</h3>
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@* Stats delen *@
+<section class="stats-section">
+    <div class="container">
+        <h3>SUCCESS STORIES</h3>
+        <h2>Success story</h2>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2>689</h2>
+                <p>More than 100 customers has been served</p>
+            </div>
+            <div class="stat-item">
+                <h2>370</h2>
+                <p>More than 370 projects has been completed</p>
+            </div>
+            <div class="stat-item">
+                <h2>125</h2>
+                <p>More than 125 branches has been established in Europe and America</p>
+            </div>
+        </div>
+
+        <div class="stats-image">
+            <img src="/media/mbfdvnqn/4people.png" alt="Success Story" />
+        </div>
+    </div>
+</section>
+
+@* Partner sektionen *@
+<section class="partners-section">
+    <div class="container">
+        <div class="partners-logos">
+            <img src="/media/35cfwsji/freedombird.png" alt="Freedom Bird" />
+            <img src="/media/suhbowop/identity.png" alt="Identity" />
+            <img src="/media/0dbjbw2w/natural.png" alt="Natural" />
+            <img src="/media/pinhc5pt/simpleaf.png" alt="Simpleaf" />
+            <img src="/media/krhlibtu/globe.png" alt="Globe" />
+            <img src="/media/qkgkvdjm/fossilgroup.png" alt="Fossil Group" />
+        </div>
+    </div>
+</section>

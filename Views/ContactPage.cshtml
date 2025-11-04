@@ -1,0 +1,78 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.PublishedContent
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* Page Header delen *@
+<section class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+    </div>
+</section>
+
+@* kontakt info sektionen *@
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-image">
+            <img src="/media/thzdhysb/happyguy.png" alt="Contact Person" />
+        </div>
+
+        <div class="contact-info">
+            <h2>Let us know about<br />your next project</h2>
+
+            <div class="info-item">
+                <strong>📍 Office location</strong>
+                <p>Klarabergsviadukten 90, 111 64 Stockholm</p>
+            </div>
+
+            <div class="info-item">
+                <strong>📞 Phone number</strong>
+                <p>+46 8 123 456 75</p>
+            </div>
+
+            <div class="info-item">
+                <strong>📧 E-mail address</strong>
+                <p>sales@onatrix.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@* Map sektion *@
+<section class="map-contact-section" style="background-image: url('/media/al4lcksu/map.png');">
+    <div class="container">
+        <div class="contact-form-overlay">
+            <p class="form-label">REQUEST A CALL BACK</p>
+            <h2>Let us know about your<br />next project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula vitae faucibus ultrices, sagittis metus efficitur purus.</p>
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="Name" />
+                    <input type="tel" placeholder="Phone" />
+                </div>
+                <input type="email" placeholder="Email address" />
+                <select>
+                    <option>Financial consulting</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+@* Partner Sektion *@
+<section class="partners-section">
+    <div class="container">
+        <div class="partners-logos">
+            <img src="/media/35cfwsji/freedombird.png" alt="Freedom Bird" />
+            <img src="/media/suhbowop/identity.png" alt="Identity" />
+            <img src="/media/0dbjbw2w/natural.png" alt="Natural" />
+            <img src="/media/pinhc5pt/simpleaf.png" alt="Simpleaf" />
+            <img src="/media/krhlibtu/globe.png" alt="Globe" />
+            <img src="/media/qkgkvdjm/fossilgroup.png" alt="Fossil Group" />
+        </div>
+    </div>
+</section>

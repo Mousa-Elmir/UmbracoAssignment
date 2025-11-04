@@ -1,0 +1,80 @@
+﻿@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title ?? "Onatrix"</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+
+
+    @* Top Bar *@
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span>📍 Klarabergsviadukten 90, 111 64 Stockholm</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="/media/nqwd1lbw/facebook.png" alt="Facebook" style="width: 20px; height: 20px;" />
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="/media/whdfrcge/twitter.png" alt="Twitter" style="width: 20px; height: 20px;" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <img src="/media/ckgdy4qh/linkedin.png" alt="LinkedIn" style="width: 20px; height: 20px;" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @* Header *@
+    <header class="header">
+        <nav>
+            <div class="container header-inner">
+                <div class="brand">
+                    <a href="/">
+                        <img src="/media/ibfdo0l1/symbol.png" alt="Onatrix Logo" style="height: 35px; margin-right: 8px;" />
+                        <span style="font-size: 24px; font-weight: 700; color: #4F5955;">Onatrix</span>
+                    </a>
+                </div>
+
+                <div class="main-nav">
+                    @{
+                        var root = Umbraco.AssignedContentItem.Root();
+                        if (root != null)
+                        {
+                            foreach (var node in root.Children().Where(x => x.IsVisible()))
+                            {
+                                <a href="@node.Url()">@node.Name</a>
+                            }
+                        }
+                    }
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Search" aria-label="Search" style="border: 1px solid #e0e0e0; padding: 8px 15px; border-radius: 20px; outline: none;" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    @* Footer *@
+    <footer>
+        <div class="container">
+            <p>© Onatrix. All Rights Reserved. Credits to <a href="#">Themesflat</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
